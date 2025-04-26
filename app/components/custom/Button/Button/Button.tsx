@@ -5,12 +5,26 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
-import { type RouteConfig, route } from "@react-router/dev/routes";
-import getPagesConfigs from "./data/pageConfig";
+import css from "./Button.module.css"
 
-/* ----- DATAS ----- */
-export default [
-	...getPagesConfigs().map((page) => {
-		return route(page.path, page.componentPath);
-	}),
-] satisfies RouteConfig;
+
+/* ----- PROPS ----- */
+interface Props {
+	label: string;
+	onClick?: () => void;
+	disabled?: boolean;
+};
+
+
+/* ----- COMPONENT ----- */
+export default function Button({ label, disabled = false, onClick = () => { } }: Props) {
+	return (
+		<button
+			onClick={onClick}
+			className={`${css.button} textStyle-buttonText`}
+			disabled={disabled}
+		>
+			{label}
+		</button>
+	);
+};

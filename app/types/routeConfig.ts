@@ -5,12 +5,12 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
-import { type RouteConfig, route } from "@react-router/dev/routes";
-import getPagesConfigs from "./data/pageConfig";
+import type { LucideProps } from "lucide-react";
 
 /* ----- DATAS ----- */
-export default [
-	...getPagesConfigs().map((page) => {
-		return route(page.path, page.componentPath);
-	}),
-] satisfies RouteConfig;
+export type PageConfig = {
+    name: string;
+    path: string;
+    componentPath: string;
+	icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>
+}

@@ -5,12 +5,21 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
-import { type RouteConfig, route } from "@react-router/dev/routes";
-import getPagesConfigs from "./data/pageConfig";
+import PresentationPage from "~/components/custom/Layout/PresentationPage/PresentationPage";
+import type { Route } from "./+types/contact";
 
-/* ----- DATAS ----- */
-export default [
-	...getPagesConfigs().map((page) => {
-		return route(page.path, page.componentPath);
-	}),
-] satisfies RouteConfig;
+/* ----- COMPONENTS ----- */
+export function meta({ }: Route.MetaArgs) {
+	return [
+		{ title: "La Femme du Boulanger - Contact" },
+		{ name: "description", content: "Nous contacter" },
+	];
+}
+
+export default function ContactPage() {
+	return <div>
+		<PresentationPage
+			subtitle="Nous contacter"
+		/>
+	</div>
+}

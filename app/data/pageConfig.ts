@@ -5,12 +5,16 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
-import { type RouteConfig, route } from "@react-router/dev/routes";
-import getPagesConfigs from "./data/pageConfig";
+import { ChefHat, Contact, Home } from "lucide-react";
+import type { PageConfig } from "../types/routeConfig";
 
 /* ----- DATAS ----- */
-export default [
-	...getPagesConfigs().map((page) => {
-		return route(page.path, page.componentPath);
-	}),
-] satisfies RouteConfig;
+const PagesConfigs: PageConfig[] = [
+	{ name: "Accueil", path: "/", componentPath: "routes/accueil.tsx", icon: Home },
+	{ name: "Carte", path: "/carte", componentPath: "routes/carte.tsx", icon: ChefHat },
+	{ name: "Contact", path: "/contact", componentPath: "routes/contact.tsx", icon: Contact },
+];
+
+export default function getPagesConfigs() {
+	return PagesConfigs;
+}

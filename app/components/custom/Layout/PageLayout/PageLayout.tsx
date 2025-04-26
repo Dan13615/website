@@ -5,12 +5,19 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
-import { type RouteConfig, route } from "@react-router/dev/routes";
-import getPagesConfigs from "./data/pageConfig";
+import React from "react";
 
-/* ----- DATAS ----- */
-export default [
-	...getPagesConfigs().map((page) => {
-		return route(page.path, page.componentPath);
-	}),
-] satisfies RouteConfig;
+/* ----- PROPS ----- */
+interface Props {
+	children?: React.ReactNode;
+};
+
+
+/* ----- COMPONENT ----- */
+export default function PageLayout({ children }: Props) {
+	return (
+		<div className="w-full min-h-screen p-12 md:p-32 flex flex-col items-center justify-center">
+			{children}
+		</div>
+	);
+};

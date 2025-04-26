@@ -5,12 +5,22 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
-import { type RouteConfig, route } from "@react-router/dev/routes";
-import getPagesConfigs from "./data/pageConfig";
+import Button from "../Button/Button";
 
-/* ----- DATAS ----- */
-export default [
-	...getPagesConfigs().map((page) => {
-		return route(page.path, page.componentPath);
-	}),
-] satisfies RouteConfig;
+
+/* ----- PROPS ----- */
+interface Props {
+	label: string;
+	to: string;
+	disabled?: boolean;
+};
+
+
+/* ----- COMPONENT ----- */
+export default function NavigateButton({ label, to, disabled = false }: Props) {
+	return (
+		<a href={to}>
+			<Button label={label} disabled={disabled} />
+		</a>
+	);
+};

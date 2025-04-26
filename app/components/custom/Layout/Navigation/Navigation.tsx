@@ -5,12 +5,21 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
-import { type RouteConfig, route } from "@react-router/dev/routes";
-import getPagesConfigs from "./data/pageConfig";
+import getPagesConfigs from "~/data/pageConfig"
 
-/* ----- DATAS ----- */
-export default [
-	...getPagesConfigs().map((page) => {
-		return route(page.path, page.componentPath);
-	}),
-] satisfies RouteConfig;
+/* ----- COMPONENTS ----- */
+export function AppSidebar() {
+	const pagesConfig = getPagesConfigs();
+
+	return (
+		<div className="flex flex-row w-screen p-6 justify-center items-center gap-10 md:gap-24 text-lg md:text-2xl fixed bg-white">
+			{pagesConfig.map((page) => (
+				<div key={page.name}>
+					<a href={page.path}>
+						<span>{page.name}</span>
+					</a>
+				</div>
+			))}
+		</div>
+	)
+}
