@@ -7,8 +7,10 @@
 /* ----- IMPORTS ----- */
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import type { Route } from "./+types/root";
-import "./app.css";
 import { AppSidebar } from "./components/custom/Layout/Navigation/Navigation";
+import "./app.css";
+import "./styles/colors.css"
+import "./styles/texts.css"
 
 /* ----- DATAS ----- */
 export const links: Route.LinksFunction = () => [

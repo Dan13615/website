@@ -1,0 +1,50 @@
+/*
+╔════════════════════════════════════════════════╗
+- Authors :
+    >> Daniil STEPANOV - { daniil.stepanov@epitech.eu }
+    >> Nathan TIROLF - { nathan.tirolf@epitech.eu }
+╚════════════════════════════════════════════════╝
+*/
+
+.textStyle-title {
+	font-size: 96px;
+	font-weight: 600;
+	font-family: "Cormorant Garamond";
+	letter-spacing: 12px;
+}
+
+.textStyle-title2 {
+	font-size: 64px;
+	font-weight: 600;
+	font-family: "Cormorant Garamond";
+}
+
+.textStyle-subtitle {
+	font-size: 48px;
+	font-weight: 400;
+	font-family: "Cormorant Garamond";
+}
+
+.textStyle-subtitle2 {
+	font-size: 40px;
+	font-weight: 400;
+	font-family: "Cormorant Garamond";
+}
+
+.textStyle-navigation {
+	font-size: 26px;
+	font-weight: 400;
+	font-family: "Cormorant Garamond";
+}
+
+.textStyle-buttonText {
+	font-size: 19px;
+	font-weight: 600;
+	font-family: "Cormorant Garamond";
+}
+
+.textStyle-text {
+	font-size: 24px;
+	font-weight: 400;
+	font-family: "Cormorant Garamond";
+}

@@ -11,7 +11,7 @@ import PresentationPage from "~/components/custom/Layout/PresentationPage/Presen
 /* ----- COMPONENTS ----- */
 export function meta({ }: Route.MetaArgs) {
 	return [
-		{ title: "La Femme du Boulanger - Carte" },
+		{ title: "La Femme Du Boulanger - Carte" },
 		{ name: "description", content: "Decouvrir nos cartes et menus" },
 	];
 }

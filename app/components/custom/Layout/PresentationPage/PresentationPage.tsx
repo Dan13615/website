@@ -11,16 +11,18 @@ import PageLayout from "../PageLayout/PageLayout";
 /* ----- PROPS ----- */
 interface Props {
 	subtitle: string;
+	children?: React.ReactNode;
 };
 
 
 /* ----- COMPONENT ----- */
-export default function PresentationPage({ subtitle }: Props) {
+export default function PresentationPage({ subtitle, children }: Props) {
 	return (
-		<PageLayout>
-			<div className="flex flex-col items-center justify-center w-full h-full gap-4">
-				<h2 className="text-xl md:text-2xl font-bold text-center">{subtitle}</h2>
-				<h1 className="text-5xl md:text-7xl font-bold text-center">La Femme du Boulanger</h1>
+		<PageLayout bg_color="gray">
+			<div className="flex flex-col items-center justify-center w-full h-full">
+				<h2 className="textStyle-subtitle font-bold text-center">{subtitle}</h2>
+				<h1 className="textStyle-title font-bold text-center mb-12">La Femme Du Boulanger</h1>
+				{children}
 			</div>
 		</PageLayout>
 	);

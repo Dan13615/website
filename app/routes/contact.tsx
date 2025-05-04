@@ -11,7 +11,7 @@ import type { Route } from "./+types/contact";
 /* ----- COMPONENTS ----- */
 export function meta({ }: Route.MetaArgs) {
 	return [
-		{ title: "La Femme du Boulanger - Contact" },
+		{ title: "La Femme Du Boulanger - Contact" },
 		{ name: "description", content: "Nous contacter" },
 	];
 }

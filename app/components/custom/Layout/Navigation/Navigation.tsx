@@ -12,7 +12,7 @@ export function AppSidebar() {
 	const pagesConfig = getPagesConfigs();
 
 	return (
-		<div className="flex flex-row w-screen p-6 justify-center items-center gap-10 md:gap-24 text-lg md:text-2xl fixed bg-white">
+		<div className="flex flex-row w-screen p-6 justify-center items-center gap-60 textStyle-navigation fixed bg-white z-50">
 			{pagesConfig.map((page) => (
 				<div key={page.name}>
 					<a href={page.path}>
