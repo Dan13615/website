@@ -9,18 +9,24 @@ import React from "react";
 
 /* ----- PROPS ----- */
 interface Props {
-	bg_color?: String;
-	text_color?: String;
-	children?: React.ReactNode;
-	className?: String;
+	name: String,
+	price: String,
+	description: String,
 };
 
 
 /* ----- COMPONENT ----- */
-export default function PageLayout({ bg_color = "gray", text_color = "white", children, className }: Props) {
+export default function Product({ name, price, description }: Props) {
+	const getSide = (s: boolean) => (s ? "right" : "left");
+
 	return (
-		<div className={`w-full min-h-screen px-[200px] py-40 flex flex-col items-center justify-center color-bg-${bg_color} color-text-${text_color} ${className}`}>
-			{children}
+		<div className="flex flex-col w-full">
+			<div className="flex flex-row gap-4 w-full items-center">
+				<div className="textStyle-text">{name}</div>
+				<div className="flex-grow border-dotted border-b-2 h-4"></div>
+				<div className="textStyle-text">{price}€</div>
+			</div>
+			<div className="textStyle-text">{description}</div>
 		</div>
 	);
 };

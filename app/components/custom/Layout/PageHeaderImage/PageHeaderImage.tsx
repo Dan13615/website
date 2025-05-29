@@ -6,21 +6,28 @@
 
 /* ----- IMPORTS ----- */
 import React from "react";
+import PageLayout from "../PageLayout/PageLayout";
 
 /* ----- PROPS ----- */
 interface Props {
+	children?: React.ReactNode;
+	image: String;
 	bg_color?: String;
 	text_color?: String;
-	children?: React.ReactNode;
-	className?: String;
+	title: String;
+	subtitle: String;
 };
 
 
 /* ----- COMPONENT ----- */
-export default function PageLayout({ bg_color = "gray", text_color = "white", children, className }: Props) {
+export default function PageHeaderImage({ bg_color = "gray", text_color = "white", children, title, subtitle, image }: Props) {
 	return (
-		<div className={`w-full min-h-screen px-[200px] py-40 flex flex-col items-center justify-center color-bg-${bg_color} color-text-${text_color} ${className}`}>
+		<PageLayout bg_color={bg_color} text_color={text_color} className="flex flex-col gap-16">
+			<h1 className="textStyle-title2 font-bold text-center">{title}</h1>
+			<h3 className="textStyle-subtitle2 font-bold">{subtitle}</h3>
+			<div className="w-full h-80 rounded-4xl bg-center bg-cover" style={{ backgroundImage: `url(${image})` }}>
+			</div>
 			{children}
-		</div>
+		</PageLayout>
 	);
 };

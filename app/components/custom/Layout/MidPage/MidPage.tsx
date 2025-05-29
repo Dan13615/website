@@ -18,14 +18,14 @@ interface Props {
 
 
 /* ----- COMPONENT ----- */
-export default function MidPage({ children, side, image, bg_color, text_color }: Props) {
+export default function MidPage({ children, side, image, bg_color = "gray", text_color = "white" }: Props) {
 	const getSide = (s: boolean) => (s ? "right" : "left");
 
 	return (
 		<div className="w-full min-h-screen flex flex-row">
 			{
-				[true, false].map((s) => (
-					<div key={s.valueOf.toString()} className={`w-1/2 ${side == getSide(s) ? `bg-cover bg-center object-cover` : `px-[200px] py-40 flex flex-col items-center justify-center ${bg_color != null ? `color-bg-${bg_color}` : ""} ${text_color != null ? `color-text-${text_color}` : "color-text-white"}`}`}
+				[true, false].map((s, index) => (
+					<div key={index} className={`w-1/2 ${side == getSide(s) ? `bg-cover bg-center object-cover` : `px-[200px] py-40 flex flex-col items-center justify-center color-bg-${bg_color} color-text-${text_color}`}`}
 						style={side == getSide(s) ? { backgroundImage: `url(${image})` } : {}}
 					>
 						{side == getSide(!s) && children}
