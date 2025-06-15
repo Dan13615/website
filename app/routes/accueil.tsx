@@ -9,7 +9,6 @@ import { PageLayout } from "~/components/custom/Layout/PageLayout/PageLayout";
 import type { Route } from "./+types/accueil";
 import PresentationPage from "~/components/custom/Layout/PresentationPage/PresentationPage";
 import MidPage from "~/components/custom/Layout/MidPage/MidPage";
-import Button from "~/components/custom/Button/NavigateButton/NavigateButton";
 import NavigateButton from "~/components/custom/Button/NavigateButton/NavigateButton";
 
 /* ----- COMPONENTS ----- */
