@@ -10,6 +10,7 @@ import type { Route } from "./+types/accueil";
 import PresentationPage from "~/components/custom/Layout/PresentationPage/PresentationPage";
 import MidPage from "~/components/custom/Layout/MidPage/MidPage";
 import NavigateButton from "~/components/custom/Button/NavigateButton/NavigateButton";
+import TestimonialsCarousel from "~/components/custom/Display/Carousel/Carousel";
 
 /* ----- COMPONENTS ----- */
 export function meta({}: Route.MetaArgs) {
@@ -39,8 +40,7 @@ export default function AccueilPage() {
       <MidPage side="left" bg_color="brown" image="/img/kanna_wit.jpg">
         <div className="flex flex-col items-center justify-center w-full h-full gap-8 text-center">
           <h1 className="textStyle-title2 font-bold text-center">Avis des Clients</h1>
-          <p className="textStyle-text">Dès l’entrée, l’accueil chaleureux et l’atmosphère intimiste de la salle, décorée avec goût dans un style mêlant pierre naturelle, bois brut et touches de modernité, annoncent la promesse d’un moment hors du temps. Ici, tout est fait maison, de l’entrée au dessert, sans exception. La cuisine rend hommage aux grands classiques de la gastronomie française, tout en offrant une pointe de créativité et d’audace. Le chef, amoureux des bons produits, sélectionne chaque ingrédient avec soin auprès de producteurs locaux et de marchés niçois réputés, garantissant une fraîcheur irréprochable.</p>
-          <p className="textStyle-subtitle2 font-bold">John DOE</p>
+          <TestimonialsCarousel />
         </div>
       </MidPage>
       <MidPage side="right" bg_color="green" image="/img/kanna_wit.jpg">

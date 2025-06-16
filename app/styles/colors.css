@@ -7,94 +7,110 @@
 */
 
 :root {
+  --color-gray: #9d9d9d;
 
-	--color-gray: #9D9D9D;
+  --color-green: #6d6c53;
+  --color-green2: #e9edc9;
 
-	--color-green: #CCD5AE;
-	--color-green2: #E9EDC9;
+  --color-white: #ffffff;
+  --color-light: #fefae0;
+  --color-light2: #faedcd;
 
-	--color-white: #FFFFFF;
-	--color-light: #FEFAE0;
-	--color-light2: #FAEDCD;
+  --color-brown: #694a38;
+  --color-dark: #2e1b10;
 
-	--color-brown: #D4A373;
-	--color-dark: #2E1B10;
-
-	--color-black: #000000;
+  --color-black: #000000;
+  --color-gold: #f9c74f;
 }
 
 .color-text-gray {
-	color: var(--color-gray);
+  color: var(--color-gray);
 }
 
 .color-text-gray {
-	color: var(--color-gray);
+  color: var(--color-gray);
 }
 
 .color-text-green {
-	color: var(--color-green);
+  color: var(--color-green);
 }
 
 .color-text-green2 {
-	color: var(--color-green2);
+  color: var(--color-green2);
 }
 
 .color-text-white {
-	color: var(--color-white);
+  color: var(--color-white);
 }
 
 .color-text-light {
-	color: var(--color-light);
+  color: var(--color-light);
 }
 
 .color-text-light2 {
-	color: var(--color-light2);
+  color: var(--color-light2);
 }
 
 .color-text-brown {
-	color: var(--color-brown);
+  color: var(--color-brown);
 }
 
 .color-text-dark {
-	color: var(--color-dark);
+  color: var(--color-dark);
 }
 
 .color-text-black {
-	color: var(--color-black);
+  color: var(--color-black);
+}
+
+.color-text-gold {
+  color: var(--color-gold);
+}
+
+.group-hover\:color-text-gold {
+  color: var(--color-gold);
+}
+
+.color-bg-gold {
+  background-color: var(--color-gold);
+}
+
+.color-border-gold {
+  border-color: var(--color-gold);
 }
 
 .color-bg-gray {
-	background-color: var(--color-gray);
+  background-color: var(--color-gray);
 }
 
 .color-bg-green {
-	background-color: var(--color-green);
+  background-color: var(--color-green);
 }
 
 .color-bg-green2 {
-	background-color: var(--color-green2);
+  background-color: var(--color-green2);
 }
 
 .color-bg-white {
-	background-color: var(--color-white);
+  background-color: var(--color-white);
 }
 
 .color-bg-light {
-	background-color: var(--color-light);
+  background-color: var(--color-light);
 }
 
 .color-bg-light2 {
-	background-color: var(--color-light2);
+  background-color: var(--color-light2);
 }
 
 .color-bg-brown {
-	background-color: var(--color-brown);
+  background-color: var(--color-brown);
 }
 
 .color-bg-dark {
-	background-color: var(--color-dark);
+  background-color: var(--color-dark);
 }
 
 .color-bg-black {
-	background-color: var(--color-black);
+  background-color: var(--color-black);
 }
