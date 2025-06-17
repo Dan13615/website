@@ -26,13 +26,32 @@ export default function AccueilPage() {
       <PageLayout bg_color="green">
         <div className="flex flex-col items-center justify-center w-full h-full gap-6">
           <h1 className="textStyle-title2 font-bold text-center">Un restaurant rustique proposant des produit locaux</h1>
-          <div className="flex flex-row gap-20 items-center">
+          <div className="flex flex-row gap-80 items-center">
             <div className="flex flex-col w-1/2 gap-4">
-              <h3 className="textStyle-subtitle2 font-bold">Decouvrez La Femme Du Boulanger</h3>
-              <p className="textStyle-text">Niché en plein cœur de Nice, à seulement 50 mètres de la célèbre Promenade des Anglais et à deux pas du jardin Albert 1er, “La femme du boulanger” est un havre de gastronomie où l’authenticité et la passion pour le fait-maison sont les maîtres mots. Installé dans la zone piétonne, à l’abri du tumulte urbain, ce restaurant au charme provençal allie convivialité, raffinement et respect des traditions culinaires françaises.</p>
+              <h3 className="textStyle-subtitle2 font-bold self-center">Decouvrez La Femme Du Boulanger</h3>
+              <div className="flex items-center gap-4">
+                <img src="/img/epi.png" alt="Epi" className="w-16 h-16" />
+                <p className="textStyle-text">Niché en plein cœur de Nice, à seulement 50 mètres de la célèbre Promenade des Anglais et à deux pas du jardin Albert 1er, “La femme du boulanger” est un havre de gastronomie où l’authenticité et la passion pour le fait-maison sont les maîtres mots.</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <img src="/img/epi.png" alt="Epi" className="w-16 h-16" />
+                <p className="textStyle-text">Installé dans la zone piétonne, à l’abri du tumulte urbain, ce restaurant au charme provençal allie convivialité, raffinement et respect des traditions culinaires françaises. </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <img src="/img/epi.png" alt="Epi" className="w-16 h-16" />
+                <p className="textStyle-text">Dès l’entrée, l’accueil chaleureux et l’atmosphère intimiste de la salle, décorée avec goût dans un style mêlant pierre naturelle, bois brut et touches de modernité, annoncent la promesse d’un moment hors du temps. Ici, tout est fait maison, de l’entrée au dessert, sans exception.</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <img src="/img/epi.png" alt="Epi" className="w-16 h-16" />
+                <p className="textStyle-text">La cuisine rend hommage aux grands classiques de la gastronomie française, tout en offrant une pointe de créativité et d’audace.</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <img src="/img/epi.png" alt="Epi" className="w-16 h-16" />
+                <p className="textStyle-text">Le chef, amoureux des bons produits, sélectionne chaque ingrédient avec soin auprès de producteurs locaux et de marchés niçois réputés, garantissant une fraîcheur irréprochable.</p>
+              </div>
             </div>
             <div className="w-1/2 h-full">
-              <img src="/img/kanna_wit.jpg" alt="Kanna Wit" className="rounded-4xl" />
+              <img src="/img/vegetables.jpeg" alt="vegetables" className="rounded-4xl h-215" />
             </div>
           </div>
         </div>

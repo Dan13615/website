@@ -24,7 +24,7 @@ export default function PageHeaderImage({ bg_color = "gray", text_color = "white
     <PageLayout bg_color={bg_color} text_color={text_color} className="flex flex-col gap-16">
       <h1 className="textStyle-title2 font-bold text-center">{title}</h1>
       <h3 className="textStyle-subtitle2 font-bold">{subtitle}</h3>
-      <div className="w-full h-80 rounded-4xl bg-center bg-cover" style={{ backgroundImage: `url(${image})` }}></div>
+      <div className="w-full h-200 rounded-4xl bg-center bg-cover" style={{ backgroundImage: `url(${image})` }}></div>
       {children}
     </PageLayout>
   );
