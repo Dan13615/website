@@ -1,4 +1,4 @@
-name: Mirror to Destination
+name: Mirror Repository
 on:
   push:
     branches: [main]
@@ -7,8 +7,19 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-      - name: Mirror repository
-        uses: pixta-dev/repository-mirroring-action@v1
+      - name: Checkout with full history
+        uses: actions/checkout@v4
         with:
-          target_repo_url: git@github.com:Dan13615/website.git
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          fetch-depth: 0
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Mirror to destination
+        run: |
+          git remote add destination git@github.com:Dan13615/website.git
+          git push --mirror destination
