@@ -6,7 +6,6 @@
 
 /* ----- IMPORTS ----- */
 import * as React from "react";
-import css from "./midpage.module.css";
 
 /* ----- PROPS ----- */
 interface Props {
@@ -24,7 +23,7 @@ export default function MidPage({ children, side, image, bg_color = "gray", text
 
 	return (
 		<>
-			<div className={`w-full min-h-screen flex flex-row ${css.laptop}`}>
+			<div className={`w-full min-h-screen flex flex-row laptop`}>
 				{
 					[true, false].map((s, index) => (
 						<div key={index} className={`w-1/2 ${side == getSide(s) ? `bg-cover bg-center object-cover` : `px-[12.5vw] py-[10vw] flex flex-col items-center justify-center color-bg-${bg_color} color-text-${text_color}`}`}
@@ -35,7 +34,7 @@ export default function MidPage({ children, side, image, bg_color = "gray", text
 					))
 				}
 			</div>
-			<div className={`w-full min-h-screen ${css.mobile} bg-cover bg-center object-cover px-[8vw] py-[5vw] flex flex-col items-center justify-center color-bg-${bg_color} color-text-${text_color} relative`}
+			<div className={`w-full min-h-screen mobile bg-cover bg-center object-cover px-[8vw] py-[5vw] flex flex-col items-center justify-center color-bg-${bg_color} color-text-${text_color} relative`}
 				style={{ backgroundImage: `url(${image})`, }}
 			>
 				<div

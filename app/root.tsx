@@ -11,6 +11,7 @@ import { AppSidebar } from "./components/custom/Layout/Navigation/Navigation";
 import "./app.css";
 import "./styles/colors.css"
 import "./styles/texts.css"
+import "./styles/responsive.css"
 
 /* ----- DATAS ----- */
 export const links: Route.LinksFunction = () => [

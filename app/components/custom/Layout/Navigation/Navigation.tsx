@@ -5,18 +5,17 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
-import css from "./navigation.module.css";
 import { NavbarLaptop } from "./laptop/laptop";
 import { NavbarMobile } from "./mobile/mobile";
 
 /* ----- COMPONENTS ----- */
 export function AppSidebar() {
 	return (
-		<div className={css.navbar}>
-			<div className={css.laptop}>
+		<div>
+			<div className="laptop">
 				<NavbarLaptop />
 			</div>
-			<div className={css.mobile}>
+			<div className="mobile">
 				<NavbarMobile />
 			</div>
 		</div>
