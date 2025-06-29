@@ -13,16 +13,18 @@ interface Props {
 	label: string;
 	onClick?: () => void;
 	disabled?: boolean;
+	type?: "button" | "submit" | "reset";
 };
 
 
 /* ----- COMPONENT ----- */
-export default function Button({ label, disabled = false, onClick = () => { } }: Props) {
+export default function Button({ label, disabled = false, onClick = () => { }, type = "button" }: Props) {
 	return (
 		<button
 			onClick={onClick}
 			className={`${css.button} textStyle-buttonText`}
 			disabled={disabled}
+			type={type}
 		>
 			{label}
 		</button>

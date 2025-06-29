@@ -6,6 +6,7 @@
 
 /* ----- IMPORTS ----- */
 import { useState } from "react";
+import Button from "../Button/Button/Button";
 
 /* ----- INTERFACE ----- */
 interface ContactFormData {
@@ -119,9 +120,9 @@ export default function ContactForm() {
 					</div>
 				)}
 
-				<button type="submit" disabled={isSubmitting} className="text-2xl w-full bg-amber-600 hover:bg-amber-700 disabled:bg-amber-400 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
-					{isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
-				</button>
+				<div className="w-full flex justify-center">
+					<Button label={isSubmitting ? "Envoi en cours..." : "Envoyer le message"} disabled={isSubmitting} type="submit" />
+				</div>
 			</form>
 		</div>
 	);
