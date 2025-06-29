@@ -9,8 +9,8 @@ import type { LucideProps } from "lucide-react";
 
 /* ----- DATAS ----- */
 export type PageConfig = {
-    name: string;
-    path: string;
-    componentPath: string;
+	name: string;
+	path: string;
+	componentPath: string;
 	icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>
 }

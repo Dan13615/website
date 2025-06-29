@@ -5,7 +5,7 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
-import React from "react";
+import * as React from "react";
 
 /* ----- PROPS ----- */
 interface Props {
