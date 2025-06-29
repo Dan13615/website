@@ -7,50 +7,50 @@
 */
 
 .textStyle-title {
-	font-size: 96px;
+	font-size: max(6vw, 46px);
 	font-weight: 600;
 	font-family: "Cormorant Garamond";
 	letter-spacing: 12px;
 }
 
 .textStyle-title2 {
-	font-size: 64px;
+	font-size: max(4vw, 32px);
 	font-weight: 600;
 	font-family: "Cormorant Garamond";
 }
 
 .textStyle-subtitle {
-	font-size: 48px;
+	font-size: max(3vw, 24px);
 	font-weight: 400;
 	font-family: "Cormorant Garamond";
 }
 
 .textStyle-subtitle2 {
-	font-size: 40px;
+	font-size: max(2.5vw, 20px);
 	font-weight: 400;
 	font-family: "Cormorant Garamond";
 }
 
 .textStyle-subtitle3 {
-	font-size: 32px;
+	font-size: max(2vw, 16px);
 	font-weight: 800;
 	font-family: "Cormorant Garamond";
 }
 
 .textStyle-navigation {
-	font-size: 26px;
+	font-size: max(1.625vw, 12px);
 	font-weight: 400;
 	font-family: "Cormorant Garamond";
 }
 
 .textStyle-buttonText {
-	font-size: 19px;
+	font-size: max(1.188vw, 16px);
 	font-weight: 600;
 	font-family: "Cormorant Garamond";
 }
 
 .textStyle-text {
-	font-size: 24px;
+	font-size: max(1.5vw, 12px);
 	font-weight: 400;
 	font-family: "Cormorant Garamond";
 }
