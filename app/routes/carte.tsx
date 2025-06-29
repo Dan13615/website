@@ -97,8 +97,8 @@ export default function CartePage() {
 		<div>
 			<PresentationPage subtitle="Decouvrir nos cartes et menus" />
 			<PageHeaderImage bg_color="green" title="Nos Menus" subtitle="À déguster sans fin !" image="/img/breakfast.jpeg">
-				<div className="flex flex-row w-full gap-24">
-					<div className="flex flex-col w-1/2 gap-16">
+				<div className="flex flex-col md:flex-row justify-center items-center w-full gap-24">
+					<div className="flex flex-col w-full gap-16">
 						{breakfast_formulas.map((f) => (
 							<div className="flex flex-col w-full justify-center items-center">
 								<div className="flex flex-row gap-6 w-full justify-center items-center">
@@ -107,13 +107,14 @@ export default function CartePage() {
 								</div>
 								<div className="flex flex-col w-full justify-center items-center">
 									{f.description.map((e) => (
-										<div className="textStyle-text  text-center">{e}</div>
+										<div className="textStyle-text text-center">{e}</div>
 									))}
 								</div>
 							</div>
 						))}
 					</div>
-					<div className="flex flex-col w-1/2">
+					<div className="w-[40vw] border-solid border-2 rounded-md mobile"></div>
+					<div className="flex flex-col w-full">
 						<div className="flex flex-col w-full justify-center items-center gap-12">
 							<div className="flex flex-col w-full justify-center items-center">
 								<div className="textStyle-subtitle3 text-center">{brunch.name}</div>
