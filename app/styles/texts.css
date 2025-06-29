@@ -50,7 +50,7 @@
 }
 
 .textStyle-text {
-	font-size: max(1.5vw, 12px);
+	font-size: max(1.5vw, 16px);
 	font-weight: 400;
 	font-family: "Cormorant Garamond";
 }

@@ -58,15 +58,15 @@ export default function TestimonialsCarousel() {
 	const current = testimonials[currentIndex];
 
 	return (
-		<div className="max-w-2xl mx-auto p-6 transition-all duration-500">
-			<div className={`transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-				<div className="flex items-center mb-4">
+		<div className="transition-all duration-500">
+			<div className={`transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"} flex flex-col items-center gap-6`}>
+				<div className="flex items-end">
 					<div className="text-yellow-500 text-3xl font-bold mr-2">{current.rating}</div>
-					<div className="text-sm text-gray-200">
+					<div className="text-sm text-gray-200 mb-1">
 						<span className="font-semibold">{current.name}</span> • {current.date}
 					</div>
 				</div>
-				<p className="text-white text-2xl italic">"{current.content}"</p>
+				<div className="text-white textStyle-text italic">"{current.content}"</div>
 			</div>
 
 			<div className="flex justify-center mt-6 space-x-2">
