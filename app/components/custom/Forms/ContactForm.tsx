@@ -76,18 +76,18 @@ export default function ContactForm() {
 	};
 
 	return (
-		<div className="max-w-2xl mx-auto p-6">
+		<div className="max-w-2xl mx-auto">
 			<form onSubmit={handleSubmit} className="space-y-6">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 					<div>
-						<label htmlFor="name" className="block text-lg font-medium text-white mb-2">
+						<label htmlFor="name" className="block textStyle-text font-medium text-white mb-2">
 							Nom *
 						</label>
 						<input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="Votre nom" />
 					</div>
 
 					<div>
-						<label htmlFor="email" className="block text-lg font-medium text-white mb-2">
+						<label htmlFor="email" className="block textStyle-text font-medium text-white mb-2">
 							Email *
 						</label>
 						<input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="votre.email@exemple.com" />
@@ -95,14 +95,14 @@ export default function ContactForm() {
 				</div>
 
 				<div>
-					<label htmlFor="subject" className="block text-lg font-medium text-white mb-2">
+					<label htmlFor="subject" className="block textStyle-text font-medium text-white mb-2">
 						Sujet *
 					</label>
 					<input type="text" id="subject" name="subject" required value={formData.subject} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="Sujet de votre message" />
 				</div>
 
 				<div>
-					<label htmlFor="message" className="block text-lg font-medium text-white mb-2">
+					<label htmlFor="message" className="block textStyle-text font-medium text-white mb-2">
 						Message *
 					</label>
 					<textarea id="message" name="message" required rows={6} value={formData.message} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-vertical" placeholder="Votre message..." />
