@@ -7,6 +7,7 @@
 /* ----- IMPORTS ----- */
 import getPagesConfigs from "~/data/pageConfig";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 /* ----- COMPONENTS ----- */
 export function NavbarLaptop() {
@@ -17,6 +18,20 @@ export function NavbarLaptop() {
     setCurrentPath(window.location.pathname);
   }, []);
 
+  enum langages {
+    FR = "fr",
+    EN = "en",
+  }
+
+  const [langage, setLangage] = useState(langages.FR);
+
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = () => {
+    i18n.changeLanguage(langage === langages.FR ? langages.EN : langages.FR);
+    setLangage(langage === langages.FR ? langages.EN : langages.FR);
+  };
+
   return (
     <>
       <div className="flex flex-row w-full p-6 justify-between items-center textStyle-navigation absolute top-0 z-50 border-b-2 color-border-gold">
@@ -25,7 +40,7 @@ export function NavbarLaptop() {
             <img src="/img/LFB.png" alt="Logo" className="w-10 h-10" />
           </a>
         </div>
-        <div className="flex flex-row gap-[5vw] justify-center items-center flex-1">
+        <div className="flex flex-row gap-[5vw] justify-center items-center flex-1 pl-22">
           {pagesConfig.map((page) => {
             const isActive = currentPath === page.path;
             return (
@@ -41,9 +56,9 @@ export function NavbarLaptop() {
             );
           })}
         </div>
-
-        {/* Empty div to maintain balance */}
-        <div className="flex-shrink-0 w-10"></div>
+        <div className="flex flex-shrink-0 w-10 items-end">
+          <img onClick={() => changeLanguage()} className="flex items-center gap-2 h-6" src={langage === langages.FR ? "/img/flags/fr.png" : "/img/flags/en.png"} alt={langage === langages.FR ? "English Flag" : "French Flag"} />
+        </div>
       </div>
 
       <div className="fixed top-0 left-0 w-22 h-screen border-r-2 color-border-gold z-40"></div>
