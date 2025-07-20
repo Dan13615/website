@@ -20,7 +20,7 @@ export default function NavigateButton({ label, to, zenchefAction, className = "
   if (zenchefAction) {
     return (
       <button data-zc-action={zenchefAction} className={`btn-primary ${className}`}>
-        {label}
+        <Button label={label} />
       </button>
     );
   }
@@ -28,14 +28,14 @@ export default function NavigateButton({ label, to, zenchefAction, className = "
   if (to?.startsWith("http")) {
     return (
       <a href={to} target="_blank" rel="noopener noreferrer" className={`btn-primary ${className}`}>
-        {label}
+        <Button label={label} />
       </a>
     );
   }
 
   return (
     <a href={to} className={`btn-primary ${className}`}>
-      {label}
+      <Button label={label} />
     </a>
   );
 }
