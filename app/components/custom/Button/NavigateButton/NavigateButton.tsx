@@ -18,23 +18,19 @@ interface NavigateButtonProps {
 /* ----- COMPONENT ----- */
 export default function NavigateButton({ label, to, zenchefAction, className = "" }: NavigateButtonProps) {
   if (zenchefAction) {
-    return (
-      <button data-zc-action={zenchefAction} className={`btn-primary ${className}`}>
-        <Button label={label} />
-      </button>
-    );
+    return <Button dataZcAction={zenchefAction} label={label} />;
   }
 
   if (to?.startsWith("http")) {
     return (
-      <a href={to} target="_blank" rel="noopener noreferrer" className={`btn-primary ${className}`}>
+      <a href={to} target="_blank" rel="noopener noreferrer" className={`${className}`}>
         <Button label={label} />
       </a>
     );
   }
 
   return (
-    <a href={to} className={`btn-primary ${className}`}>
+    <a href={to} className={`${className}`}>
       <Button label={label} />
     </a>
   );
