@@ -11,6 +11,7 @@ import ContactForm from "~/components/custom/Forms/ContactForm";
 import { PageLayout } from "~/components/custom/Layout/PageLayout/PageLayout";
 import { ClientOnly } from "remix-utils/client-only";
 import ContactMap from "~/components/custom/Map/ContactMap";
+import NavigateButton from "~/components/custom/Button/NavigateButton/NavigateButton";
 
 /* ----- COMPONENTS ----- */
 export function meta() {
@@ -42,14 +43,8 @@ export default function ContactPage() {
         </div>
         <div className="container mx-auto px-4 mt-8 pt-16">
           <div className="text-center">
-            <p className="textStyle-subtitle text-white mb-8">{t("sendMessageDescription")}</p>
-            <p className="textStyle-subtitle2 text-white">
-              {t("phone")}:{" "}
-              <a href="tel:+33493000000" className="color-text-gold hover:underline underline md:no-underline">
-                {t("phoneNumber")}
-              </a>
-            </p>
-            <p className="textStyle-subtitle2 text-white">{t("openingHours")}</p>
+            {/* Add reservation button */}
+            <NavigateButton label={t("reserveTable")} zenchefAction="open" />
           </div>
         </div>
       </PageLayout>

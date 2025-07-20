@@ -44,7 +44,7 @@ export default function AccueilPage() {
   return (
     <div>
       <PresentationPage subtitle={t("subtitle")}>
-        <NavigateButton label={t("reserveTable")} to="https://www.thefork.fr/restaurant/la-femme-du-boulanger-r51215" />
+        <NavigateButton label={t("reserveTable")} zenchefAction="open" />
       </PresentationPage>
       <PageLayout bg_color="green" className={"laptop"}>
         <div className="flex flex-col items-center w-full h-full gap-6">
@@ -76,7 +76,7 @@ export default function AccueilPage() {
       <PageLayout bg_color="brown">
         <div className="flex flex-col items-center justify-center w-full h-full gap-6">
           <h1 className="textStyle-title font-bold text-center">{t("whatAreYouWaitingFor")}</h1>
-          <NavigateButton label={t("reserveNow")} to="https://www.thefork.fr/restaurant/la-femme-du-boulanger-r51215" />
+          <NavigateButton label={t("reserveTable")} zenchefAction="open" />
         </div>
       </PageLayout>
     </div>

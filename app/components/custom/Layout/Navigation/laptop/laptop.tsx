@@ -18,19 +18,35 @@ export function NavbarLaptop() {
     setCurrentPath(window.location.pathname);
   }, []);
 
-  enum langages {
-    FR = "fr",
-    EN = "en",
-  }
+  // Move enum outside component to prevent recreation
+  const langages = {
+    FR: "fr" as const,
+    EN: "en" as const,
+  };
 
-  const [langage, setLangage] = useState(langages.FR);
-
+  // Initialize with current language from i18n
   const { t, i18n } = useTranslation();
+  const [langage, setLangage] = useState(() => i18n.language as "fr" | "en");
 
   const changeLanguage = () => {
-    i18n.changeLanguage(langage === langages.FR ? langages.EN : langages.FR);
-    setLangage(langage === langages.FR ? langages.EN : langages.FR);
+    const newLang = langage === langages.FR ? langages.EN : langages.FR;
+    i18n.changeLanguage(newLang);
+    setLangage(newLang);
   };
+
+  // Listen for route changes more efficiently
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname);
+    };
+
+    // Listen for popstate events (back/forward navigation)
+    window.addEventListener("popstate", handleLocationChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+    };
+  }, []);
 
   return (
     <>
@@ -46,7 +62,7 @@ export function NavbarLaptop() {
             return (
               <div className={`nav-item relative group ${isActive ? "active" : ""}`} key={page.name}>
                 <a href={page.path}>
-                  <span className={`text-2xl font-extrabold transition-colors duration-500 ${isActive ? "color-text-gold" : "text-white group-hover:text-yellow-300"}`}>{page.name}</span>
+                  <span className={`text-2xl font-extrabold transition-colors duration-500 ${isActive ? "color-text-gold" : "color-text-white group-hover:text-yellow-300"}`}>{page.name}</span>
                   <div className={`absolute left-0 right-0 -bottom-1 flex flex-col items-center gap-1 ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"} transition-opacity duration-300`}>
                     <div className={`h-[2px] w-full color-bg-gold origin-left transform ${isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} transition-transform duration-300`}></div>
                     <div className={`h-[2px] w-full color-bg-gold origin-left transform ${isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"} transition-transform duration-500`}></div>
@@ -57,7 +73,7 @@ export function NavbarLaptop() {
           })}
         </div>
         <div className="flex flex-shrink-0 w-10 items-end">
-          <img onClick={() => changeLanguage()} className="flex items-center gap-2 h-6" src={langage === langages.FR ? "/img/flags/fr.png" : "/img/flags/en.png"} alt={langage === langages.FR ? "English Flag" : "French Flag"} />
+          <img onClick={changeLanguage} className="flex items-center gap-2 h-6 cursor-pointer" src={langage === langages.FR ? "/img/flags/fr.png" : "/img/flags/en.png"} alt={langage === langages.FR ? "English Flag" : "French Flag"} />
         </div>
       </div>
 

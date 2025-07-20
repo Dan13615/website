@@ -39,6 +39,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <Outlet />
+
+        {/* Zenchef SDK Script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              ;(function (d, s, id) {
+                const el = d.getElementsByTagName(s)[0]
+                if (d.getElementById(id) || el.parentNode == null) return
+                var js = d.createElement(s)
+                js.id = id
+                js.src = 'https://sdk.zenchef.com/v1/sdk.min.js'
+                el.parentNode.insertBefore(js, el)
+              })(document, 'script', 'zenchef-sdk')
+            `,
+          }}
+        />
+
+        {/* Zenchef Widget Config */}
+        <div className="zc-widget-config" data-restaurant="376858" data-open="2000" />
+
         <ScrollRestoration />
         <Scripts />
       </body>
