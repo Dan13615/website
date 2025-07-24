@@ -5,6 +5,7 @@
 // ╚════════════════════════════════════════════════╝
 
 /* ----- IMPORTS ----- */
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { PageLayout } from "~/components/custom/Layout/PageLayout/PageLayout";
 import type { Route } from "./+types/accueil";
@@ -30,13 +31,13 @@ export default function AccueilPage() {
         <h1 className="textStyle-title2 font-bold mobile">{t("discover")}</h1>
       </div>
       {[1, 2, 3, 4, 5].map((index) => (
-        <>
-          <div key={index} className="flex items-center gap-4">
+        <React.Fragment key={index}>
+          <div className="flex items-center gap-4">
             <img src="/img/epi.png" alt="Epi" className="w-16 h-16" />
             <p className="textStyle-text">{t(`description${index}`)}</p>
           </div>
           <br />
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
